@@ -1,0 +1,1078 @@
+/**
+ * TRIBALONE - Components CSS
+ * Ministry of Tribal Affairs (MoTA) UI Component Library
+ */
+
+/* ==========================================================================
+   1. Verification Badges
+   ========================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.badge-verified {
+  background: var(--gov-green-light);
+  color: var(--gov-green);
+  border: 1px solid var(--gov-green-border);
+}
+
+.badge-pending {
+  background: var(--gov-amber-light);
+  color: var(--gov-amber);
+  border: 1px solid var(--gov-amber-border);
+}
+
+.badge-needs-action, .badge-needs-review {
+  background: var(--gov-amber-light);
+  color: var(--gov-amber);
+  border: 1px solid var(--gov-amber-border);
+}
+
+.badge-mismatch, .badge-expired, .badge-rejected {
+  background: var(--gov-red-light);
+  color: var(--gov-red);
+  border: 1px solid var(--gov-red-border);
+}
+
+.badge-missing {
+  background: #F1F5F9;
+  color: var(--text-muted);
+  border: 1px solid var(--border-light);
+}
+
+.badge-sanctioned, .badge-approved {
+  background: var(--gov-blue-light);
+  color: var(--gov-blue-primary);
+  border: 1px solid var(--gov-blue-border);
+}
+
+/* ==========================================================================
+   2. Large Scholarship Scheme Cards (Pre-Matric, Post-Matric, Top Class, NFST, NOS)
+   ========================================================================== */
+.scheme-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  padding: 16px;
+  margin-bottom: 14px;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.scheme-card:hover {
+  border-color: var(--gov-blue-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.scheme-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.scheme-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scheme-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--gov-blue-light);
+  color: var(--gov-blue-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.scheme-title-text {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--gov-navy);
+  line-height: 1.3;
+}
+
+.scheme-level-tag {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.scheme-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 0.78rem;
+}
+
+.scheme-meta-item strong {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.scheme-meta-item span {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.scheme-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   3. Buttons
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--gov-blue-primary);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background: #0B2545;
+}
+
+.btn-saffron {
+  background: var(--gov-saffron);
+  color: #FFFFFF;
+}
+
+.btn-saffron:hover {
+  background: #E0530C;
+}
+
+.btn-success {
+  background: var(--gov-green);
+  color: #FFFFFF;
+}
+
+.btn-success:hover {
+  background: #03522C;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gov-navy);
+  border-color: var(--border-strong);
+}
+
+.btn-outline:hover {
+  background: var(--bg-subtle);
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 0.74rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ==========================================================================
+   4. Action Required / Deficiency Banner & Card
+   ========================================================================== */
+.deficiency-card {
+  background: var(--gov-red-light);
+  border: 1.5px solid var(--gov-red-border);
+  border-left: 6px solid var(--gov-red);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.deficiency-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.deficiency-title {
+  color: var(--gov-red);
+  font-size: 0.9rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.deficiency-body {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.deficiency-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.deficiency-deadline {
+  font-size: 0.76rem;
+  color: var(--gov-red);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   5. Application Lifecycle Visual Tracker (8-Stage Timeline)
+   ========================================================================== */
+.timeline-container {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.timeline-header {
+  margin-bottom: 14px;
+}
+
+.timeline-steps {
+  position: relative;
+  padding-left: 28px;
+}
+
+.timeline-steps::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 6px;
+  bottom: 14px;
+  width: 2px;
+  background: var(--border-strong);
+}
+
+.timeline-step {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.timeline-step:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -28px;
+  top: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-muted);
+}
+
+.timeline-step.completed .timeline-marker {
+  background: var(--gov-green);
+  border-color: var(--gov-green);
+  color: #FFFFFF;
+}
+
+.timeline-step.current .timeline-marker {
+  background: var(--gov-saffron);
+  border-color: var(--gov-saffron);
+  color: #FFFFFF;
+  box-shadow: 0 0 0 4px var(--gov-saffron-light);
+  animation: pulseMarker 2s infinite ease-in-out;
+}
+
+.timeline-step.needs-action .timeline-marker {
+  background: var(--gov-red);
+  border-color: var(--gov-red);
+  color: #FFFFFF;
+}
+
+@keyframes pulseMarker {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(255, 103, 31, 0.4); }
+  50% { box-shadow: 0 0 0 7px rgba(255, 103, 31, 0.1); }
+}
+
+.timeline-content-box {
+  background: var(--bg-subtle);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.timeline-step-title {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--gov-navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timeline-step-date {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.timeline-step-remarks {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   6. Document Wallet ("My Documents") Cards
+   ========================================================================== */
+.wallet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.doc-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.doc-card.card-green { border-left: 5px solid var(--gov-green); }
+.doc-card.card-yellow { border-left: 5px solid var(--gov-amber); }
+.doc-card.card-red { border-left: 5px solid var(--gov-red); }
+.doc-card.card-gray { border-left: 5px solid #94A3B8; opacity: 0.85; }
+
+.doc-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.doc-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gov-navy);
+}
+
+.doc-details {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.doc-details p {
+  margin-bottom: 2px;
+}
+
+.doc-card-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border-light);
+}
+
+/* Document Reuse Banner */
+.doc-reuse-banner {
+  background: var(--gov-blue-light);
+  border: 1px solid var(--gov-blue-border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   7. Unified Student Profile Card
+   ========================================================================== */
+.profile-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.profile-header-strip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.profile-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gov-navy);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border: 3px solid var(--gov-saffron);
+}
+
+.profile-main-meta h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--gov-navy);
+}
+
+.profile-sub-id {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+.profile-section-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--gov-blue-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 12px 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  font-size: 0.8rem;
+}
+
+.profile-field {
+  background: var(--bg-subtle);
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.profile-field label {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.profile-field span {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   8. Modals & Dialog Overlays
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 37, 69, 0.65);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+}
+
+.modal-content {
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-header {
+  background: var(--gov-navy);
+  color: #FFFFFF;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.btn-close-modal {
+  background: transparent;
+  border: none;
+  color: #CBD5E1;
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+}
+
+.modal-footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-subtle);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Form Styles inside Modals */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: var(--gov-blue-primary);
+  box-shadow: 0 0 0 3px rgba(19, 56, 190, 0.12);
+}
+
+/* Toast Notification */
+.toast-notice {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--toast-bg, var(--gov-navy));
+  color: #FFFFFF;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.84rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10000;
+  border-left: 4px solid var(--toast-border, var(--gov-saffron));
+  animation: slideUp 0.3s ease, fadeOut 0.5s ease 3.5s forwards;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Toast type modifiers */
+.toast-notice.info { --toast-bg: var(--gov-navy); --toast-border: var(--gov-saffron); }
+.toast-notice.success { --toast-bg: var(--gov-green-light); --toast-border: var(--gov-green); color: var(--gov-green); }
+.toast-notice.error { --toast-bg: var(--gov-red-light); --toast-border: var(--gov-red); color: var(--gov-red); }
+
+/* Fade out animation for toast */
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+/* ==========================================================================
+   PATRIOTIC INDIAN FRONT LOGIN PORTAL STYLES
+   ========================================================================== */
+.front-portal-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+  width: 100%;
+}
+
+.front-hero-banner {
+  background: linear-gradient(135deg, #07182C 0%, #0B2545 45%, #1338BE 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 103, 31, 0.4);
+}
+
+.front-hero-banner::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 103, 31, 0.15) 0%, rgba(4, 106, 56, 0.1) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.front-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.front-emblem-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.front-satyameva-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: #FFD2BA;
+  text-transform: uppercase;
+}
+
+.front-hero-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  color: #FFFFFF;
+}
+
+.front-hero-title span {
+  color: #FF9933;
+}
+
+.front-hero-tagline {
+  font-size: 1.05rem;
+  color: #E2E8F0;
+  max-width: 820px;
+  line-height: 1.5;
+}
+
+/* Statistics Counter Ribbon */
+.front-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.front-stat-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.front-stat-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.front-stat-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.front-stat-lbl {
+  font-size: 0.72rem;
+  color: #CBD5E1;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ==========================================================================
+   ROLE LOGIN SELECTOR & NEW REGISTRATION SECTION
+   ========================================================================== */
+.front-actions-section {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 28px;
+  margin-bottom: 36px;
+}
+
+@media (max-width: 992px) {
+  .front-actions-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.front-login-card-container {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-tabs-header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #F8FAFC;
+  border-bottom: 2px solid var(--border-light);
+}
+
+.login-tab-btn {
+  padding: 14px 10px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.login-tab-btn span.tab-icon {
+  font-size: 1.25rem;
+}
+
+.login-tab-btn.active {
+  background: #FFFFFF;
+  color: var(--gov-blue-primary);
+  border-bottom-color: var(--gov-saffron);
+}
+
+.login-tab-body {
+  padding: 24px;
+  flex: 1;
+}
+
+/* Registration Promotion Card */
+.front-register-promo {
+  background: linear-gradient(135deg, #FFF5EE 0%, #FFFFFF 60%, #EDFAF2 100%);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--gov-saffron-border);
+  padding: 26px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.register-badge-strip {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.register-track-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.register-track-card:hover {
+  border-color: var(--gov-saffron);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.track-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--gov-saffron-light);
+  color: var(--gov-saffron);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.track-details h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--gov-navy);
+  margin-bottom: 4px;
+}
+
+.track-details p {
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.track-features {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.track-pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  background: var(--gov-blue-light);
+  color: var(--gov-blue-primary);
+}
+
+/* ==========================================================================
+   OFFICIAL GOVERNMENT DATABASE LIVE FETCH RADAR
+   ========================================================================== */
+.gov-fetch-box {
+  background: var(--gov-blue-light);
+  border: 1px solid var(--gov-blue-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.gov-fetch-input-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.gov-verified-card {
+  background: #FFFFFF;
+  border: 2px solid var(--gov-green);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-top: 14px;
+  animation: fadeIn 0.3s ease;
+}
+
+.radar-scanning {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gov-blue-primary);
+  font-weight: 700;
+  font-size: 0.76rem;
+  animation: pulseScan 1.2s infinite ease-in-out;
+}
+
+@keyframes pulseScan {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; color: var(--gov-saffron); }
+  100% { opacity: 0.6; }
+}
+
+/* State Filter & Central Scheme Badges */
+.scheme-source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.source-central {
+  background: #EEF2FF;
+  color: #3730A3;
+  border: 1px solid #C7D2FE;
+}
+
+.source-state {
+  background: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+}
+
+/* ==========================================================================
+   ENHANCED INTERACTION STYLES: FILTER BUTTONS, TABS, TOASTS & MODALS
+   ========================================================================== */
+
+.scheme-filter-btn {
+  background: white;
+  border: 1px solid var(--border-strong);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scheme-filter-btn:hover {
+  border-color: var(--gov-blue-primary);
+  color: var(--gov-blue-primary);
+  background: var(--gov-blue-light);
+}
+
+.scheme-filter-btn.active {
+  background: var(--gov-blue-primary);
+  color: white;
+  border-color: var(--gov-blue-primary);
+  box-shadow: 0 2px 6px rgba(19, 56, 190, 0.3);
+}
+
+.student-nav-tab {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.student-nav-tab:hover {
+  color: var(--gov-blue-primary);
+}
+
+.student-nav-tab.active {
+  color: var(--gov-blue-primary);
+  border-bottom-color: var(--gov-blue-primary);
+}
+
+.toast-notice {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #0F172A;
+  color: white;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 10000;
+  animation: slideToast 0.3s cubic-bezier(0.16, 1, 0.3, 1), fadeOut 0.4s 3.6s forwards;
+}
+
+.toast-notice.success {
+  background: #046A38;
+  border-left: 5px solid #A3E6BE;
+}
+
+.toast-notice.error {
+  background: #B91C1C;
+  border-left: 5px solid #FECACA;
+}
+
+.toast-notice.info {
+  background: #0B2545;
+  border-left: 5px solid var(--gov-saffron);
+}
+
+@keyframes slideToast {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateY(10px); }
+}
+
+@keyframes modalPop {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+

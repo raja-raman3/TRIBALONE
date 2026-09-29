@@ -1,0 +1,337 @@
+/**
+ * TRIBALONE - JAGO Multilingual Tribal Assistant & Floating Help Desk
+ * Problem Statement ID: 26238 - Smart Automation Chatbot
+ * Accessible globally on Front/Login page & throughout the platform
+ */
+
+/* ==========================================================================
+   FLOATING CHATBOT LAUNCHER (Accessible to anyone without login)
+   ========================================================================== */
+.jago-floating-trigger {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #0B2545 0%, #1338BE 100%);
+  color: #FFFFFF;
+  border: 2px solid #FF671F;
+  border-radius: var(--radius-full);
+  padding: 8px 18px 8px 10px;
+  box-shadow: 0 10px 25px rgba(11, 37, 69, 0.35), 0 0 0 3px rgba(255, 103, 31, 0.2);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.jago-floating-trigger:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(11, 37, 69, 0.45), 0 0 0 4px rgba(255, 103, 31, 0.35);
+}
+
+.jago-trigger-avatar {
+  width: 36px;
+  height: 36px;
+  background: var(--gov-saffron);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  box-shadow: 0 0 0 2px #FFFFFF;
+  position: relative;
+}
+
+.jago-trigger-avatar .online-pulse {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: #10B981;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.jago-trigger-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.jago-trigger-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+
+.jago-trigger-subtitle {
+  font-size: 0.68rem;
+  color: #FDE68A;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   FLOATING POPUP CHAT WINDOW (COLLAPSIBLE)
+   ========================================================================== */
+.jago-floating-window {
+  position: fixed;
+  bottom: 84px;
+  right: 24px;
+  width: 400px;
+  max-width: calc(100vw - 32px);
+  height: 580px;
+  max-height: calc(100vh - 110px);
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(7, 24, 44, 0.28), 0 0 0 1px rgba(226, 232, 240, 0.8);
+  border: 2px solid var(--gov-saffron);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: popupSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popupSlideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.jago-floating-window.minimized {
+  display: none;
+}
+
+/* Internal Chat Container */
+.jago-chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.jago-chat-header {
+  background: var(--gov-navy);
+  color: #FFFFFF;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--gov-saffron);
+}
+
+.jago-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jago-avatar-badge {
+  width: 38px;
+  height: 38px;
+  background: var(--gov-saffron);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.jago-name-box h3 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #FFFFFF;
+}
+
+.jago-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.68rem;
+  color: #A3E6BE;
+}
+
+.jago-status-pill .pulse-dot {
+  width: 6px;
+  height: 6px;
+  background: #10B981;
+  border-radius: 50%;
+}
+
+.jago-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jago-control-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #FFFFFF;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  transition: background 0.15s ease;
+}
+
+.jago-control-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Chat Messages Flow */
+.jago-messages-area {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  background: var(--bg-canvas);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-bubble {
+  max-width: 90%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  position: relative;
+  word-break: break-word;
+}
+
+.chat-bubble.bot {
+  align-self: flex-start;
+  background: #FFFFFF;
+  color: var(--text-main);
+  border: 1px solid var(--border-light);
+  border-bottom-left-radius: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #1338BE 0%, #0B2545 100%);
+  color: #FFFFFF;
+  border-bottom-right-radius: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+.chat-time {
+  font-size: 0.64rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.chat-bubble.user .chat-time {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Quick Action Suggestion Chips */
+.jago-quick-actions-bar {
+  padding: 8px 12px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.quick-chips-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.quick-chips-scroll {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.jago-chip-btn {
+  flex: 0 0 auto;
+  background: var(--gov-blue-light);
+  color: var(--gov-blue-primary);
+  border: 1px solid var(--gov-blue-border);
+  padding: 5px 11px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.jago-chip-btn:hover {
+  background: var(--gov-blue-primary);
+  color: #FFFFFF;
+  border-color: var(--gov-blue-primary);
+}
+
+/* Chat Input Bar */
+.jago-input-form {
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  gap: 8px;
+}
+
+.jago-text-input {
+  flex: 1;
+  padding: 9px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.jago-text-input:focus {
+  border-color: var(--gov-blue-primary);
+  box-shadow: 0 0 0 3px rgba(19, 56, 190, 0.12);
+}
+
+.jago-send-btn {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #FF671F 0%, #E0530C 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.15s ease, background 0.15s ease;
+  flex-shrink: 0;
+}
+
+.jago-send-btn:hover {
+  transform: scale(1.08);
+}

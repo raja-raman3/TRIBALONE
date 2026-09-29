@@ -1,0 +1,26 @@
+{
+  "name": "tribalone-platform",
+  "version": "1.0.0",
+  "description": "Unified Scholarship & Fellowship Platform for Tribal Students - Ministry of Tribal Affairs (MoTA) Problem Statement ID 26238",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "set PORT=3001 && node server.js",
+    "lint": "eslint js/**/*.js",
+    "build": "echo Build placeholder"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "keywords": [
+    "tribalone",
+    "mota",
+    "scholarship",
+    "fellowship",
+    "tribal-students",
+    "smart-automation"
+  ],
+  "author": "MoTA Digital Solutions Team",
+  "license": "ISC"
+}

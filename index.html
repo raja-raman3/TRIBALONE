@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRIBALONE — Unified Scholarship & Fellowship Portal | Ministry of Tribal Affairs</title>
+  <meta name="description" content="TRIBALONE: One Student. One Profile. One Scholarship View. Problem Statement ID: 26238, Ministry of Tribal Affairs (MoTA). Unified platform for Pre-Matric, Post-Matric, Top Class, NFST, and NOS." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230B2545'/><circle cx='50' cy='50' r='36' fill='%23FF671F'/><circle cx='50' cy='50' r='24' fill='%23FFFFFF'/><circle cx='50' cy='50' r='10' fill='%231338BE'/></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+  <link rel="stylesheet" href="css/chatbot.css" />
+</head>
+<body>
+
+  <!-- National Tricolor Accent Strip -->
+  <div class="gov-tricolor-strip" role="presentation">
+    <div class="saffron"></div>
+    <div class="white"></div>
+    <div class="green"></div>
+  </div>
+
+  <!-- Primary Clean Government Header -->
+  <header class="gov-header" role="banner">
+    <div class="gov-header-inner">
+      <!-- Official Emblem & App Branding -->
+      <a href="javascript:void(0)" id="headerBrandLink" class="gov-branding" style="text-decoration:none;">
+        <svg class="emblem-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Government of India Emblem">
+          <circle cx="50" cy="50" r="46" stroke="#0B2545" stroke-width="4" fill="#FFFFFF"/>
+          <circle cx="50" cy="50" r="30" stroke="#FF671F" stroke-width="3" fill="#FFF5EE"/>
+          <circle cx="50" cy="50" r="14" stroke="#1338BE" stroke-width="3" fill="#FFFFFF"/>
+          <circle cx="50" cy="50" r="4" fill="#1338BE"/>
+          <line x1="50" y1="36" x2="50" y2="64" stroke="#1338BE" stroke-width="1.5"/>
+          <line x1="36" y1="50" x2="64" y2="50" stroke="#1338BE" stroke-width="1.5"/>
+          <line x1="40" y1="40" x2="60" y2="60" stroke="#1338BE" stroke-width="1.5"/>
+          <line x1="40" y1="60" x2="60" y2="40" stroke="#1338BE" stroke-width="1.5"/>
+        </svg>
+
+        <div class="gov-titles">
+          <span class="gov-ministry">Ministry of Tribal Affairs • Government of India</span>
+          <div class="gov-app-name">
+            TRIBALONE
+            <span class="badge-one">NATIONAL PORTAL</span>
+          </div>
+          <span class="gov-tagline-text">“One Student. One Profile. One Scholarship View.”</span>
+        </div>
+      </a>
+
+      <!-- Clean Header Controls: Only Language & Viewport + Auth Status -->
+      <div class="gov-header-controls">
+        <!-- 14 Indian Languages Selector -->
+        <div class="control-badge-group">
+          <span class="control-label" id="globalLangPrefixLabel">🌐 Language:</span>
+          <select id="globalLanguageSelect" class="gov-select-styled" aria-label="Select Indian Language" style="min-width: 130px;">
+            <option value="en">English</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+            <option value="ta">தமிழ் (Tamil)</option>
+            <option value="te">తెలుగు (Telugu)</option>
+            <option value="kn">ಕನ್ನಡ (Kannada)</option>
+            <option value="ml">മലയാളം (Malayalam)</option>
+            <option value="bn">বাংলা (Bengali)</option>
+            <option value="mr">मराठी (Marathi)</option>
+            <option value="gu">ગુજરાતી (Gujarati)</option>
+            <option value="or">ଓଡ଼ିଆ (Odia)</option>
+            <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+            <option value="as">অসমীয়া (Assamese)</option>
+            <option value="sat">ᱥᱟᱱᱛᱟᱲᱤ (Santali)</option>
+            <option value="gon">गोंडी (Gondi)</option>
+          </select>
+        </div>
+
+        <!-- Viewport Switcher: Mobile / Desktop -->
+        <button id="globalViewportToggle" class="btn-viewport-toggle" title="Toggle between smartphone layout and desktop view">
+          📱 Switch to Mobile View
+        </button>
+
+        <!-- Dynamic Auth Button / Profile Capsule in Header -->
+        <div id="headerAuthContainer">
+          <!-- Populated dynamically (Login/Register buttons OR Profile badge + Logout) -->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Government Sub-Bar -->
+  <div class="gov-sub-bar" role="region" aria-label="Government Interoperability Notice">
+    <div class="gov-sub-bar-inner">
+      <div class="api-ready-pill">
+        <span>🏛️</span> Ministry of Tribal Affairs (MoTA) • Direct Benefit Transfer (DBT) Mission
+      </div>
+      <div class="disclaimer-text">
+        Unified National Tribal Scholarship & Fellowship Portal | Problem Statement ID: 26238
+      </div>
+    </div>
+  </div>
+
+  <!-- Dynamic Application Workspace -->
+  <main class="app-container" id="mainAppContainer">
+    <!-- Populated dynamically by js/app.js -->
+  </main>
+
+  <!-- Global Floating JAGO Chatbot Trigger -->
+  <button id="globalJagoTrigger" class="jago-floating-trigger" title="Ask JAGO AI Assistant">
+    <div class="jago-trigger-avatar">
+      🤖
+      <span class="online-pulse"></span>
+    </div>
+    <div class="jago-trigger-text">
+      <span class="jago-trigger-title">JAGO AI Guide</span>
+      <span class="jago-trigger-subtitle">24×7 Tribal Assistant</span>
+    </div>
+  </button>
+
+  <!-- Floating JAGO Chatbot Window Popup -->
+  <div id="globalJagoPopup" class="jago-floating-window minimized" role="dialog" aria-label="JAGO Chatbot Assistant">
+    <div class="jago-chat-container">
+      <div class="jago-chat-header">
+        <div class="jago-header-left">
+          <div class="jago-avatar-badge">🤖</div>
+          <div class="jago-name-box">
+            <h3>JAGO AI Assistant</h3>
+            <span class="jago-status-pill">
+              <span class="pulse-dot"></span> Online • MoTA Tribal Guide
+            </span>
+          </div>
+        </div>
+        <div class="jago-header-controls">
+          <button class="jago-control-btn" id="btnMinimizeFloatingJago" title="Minimize">─</button>
+          <button class="jago-control-btn" id="btnCloseFloatingJago" title="Close">✕</button>
+        </div>
+      </div>
+
+      <!-- Messages Area -->
+      <div class="jago-messages-area" id="globalJagoMessagesArea">
+        <!-- Populated dynamically via JS -->
+      </div>
+
+      <!-- Quick Action Chips -->
+      <div class="jago-quick-actions-bar">
+        <span class="quick-chips-title">Frequent Queries:</span>
+        <div class="quick-chips-scroll" id="globalJagoChipsScroll">
+          <button class="jago-chip-btn" data-query="Check application status APP-2024-001">Track Status: APP-2024-001</button>
+          <button class="jago-chip-btn" data-query="What scholarships are available for Class 9 and 10?">Class 9 & 10 Scholarships</button>
+          <button class="jago-chip-btn" data-query="I am going to join college, what scholarships are available and what documents are required?">College / Higher Ed Schemes</button>
+          <button class="jago-chip-btn" data-query="What are the mandatory required documents for scholarship?">Required Documents</button>
+          <button class="jago-chip-btn" data-query="How does DBT payment credit to bank account work?">DBT Payment Credit</button>
+          <button class="jago-chip-btn" data-query="What is the difference between State and Central ST scholarships?">State vs Central Schemes</button>
+        </div>
+      </div>
+
+      <!-- Chat Input -->
+      <form class="jago-input-form" id="globalJagoChatForm">
+        <input type="text" class="jago-text-input" id="globalJagoInputText" placeholder="Ask about scholarships, documents, status, DBT..." required autocomplete="off" />
+        <button type="submit" class="jago-send-btn" title="Send Query">➤</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
